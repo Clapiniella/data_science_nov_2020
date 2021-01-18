@@ -6,7 +6,7 @@ import os
 app = Flask(__name__)  # __name__ --> __main__  
 
 # ---------- Flask functions ----------
-@app.route("/")
+@app.route("/")  # @ --> esto representa el decorador de la función
 def home():
     """ Default path """
     return app.send_static_file('greet.html')
