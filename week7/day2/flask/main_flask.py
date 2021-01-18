@@ -1,9 +1,9 @@
 from flask import Flask, request, render_template
 from utils.functions import read_json
-import json, os
+import os
 
 # Mandatory
-app = Flask(__name__)
+app = Flask(__name__)  # __name__ --> __main__  
 
 # ---------- Flask functions ----------
 @app.route("/")
@@ -22,25 +22,29 @@ def create_json():
 
 @app.route('/give_me_id', methods=['GET'])
 def give_id():
-    x = request.args['id']
-    return request.args
+    x = request.args['password']
+    if x == "12345":
+        return request.args
+    else:
+        return "No es el identificador correcto"
 
 # ---------- Other functions ----------
 
 def main():
     print("---------STARTING PROCESS---------")
-    print(os.path.dirname(os.getcwd()))
+    print(__file__)
     
     # Get the settings fullpath
     # \\ --> WINDOWS
     # / --> UNIX
-    settings_file = os.path.dirname(os.getcwd()) + "\\settings.json"
-    # Load json from file 
+    settings_file = os.path.dirname(__file__) + os.sep + "settings.json"
+    print(settings_file)
+    # Load json from file
     json_readed = read_json(fullpath=settings_file)
     
     # Load variables from jsons
     SERVER_RUNNING = json_readed["server_running"]
-    
+    print("SERVER_RUNNING", SERVER_RUNNING)
     if SERVER_RUNNING:
         DEBUG = json_readed["debug"]
         HOST = json_readed["host"]
@@ -51,4 +55,4 @@ def main():
               "Please, allow it to run it.")
 
 if __name__ == "__main__":
-    app.run()
+    main()
