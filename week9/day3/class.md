@@ -14,7 +14,7 @@
 
 **Work-out:**
 
-5. exercises/*
+5. exercises
 
 #### Remember: All this is for your future job! the more you try now, the more reward you will have in the future.
 
