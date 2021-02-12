@@ -11,6 +11,7 @@
 **Work-out:**
 
 2. Other exercises
+3. Guia_R
 
 ---------
 
