@@ -10,6 +10,31 @@
 
 "git clone https://github.com/Gabvaztor/data_science_nov_2020.git"
 
+
+```
+contenido
+│
+└───week1_precurse_python_I
+|   └───Introducción al bootcamp
+│   └───Basics
+│   └───Flujos de control
+│   └───Collections
+│
+└───week2_precurse_python_II
+│   └───Functions
+│   └───Modules
+│   └───Summary
+│   
+└───week3_precurse_python_III
+│   └───OOP
+│   └───Functional Programming
+│   └───Stadistics & Probability
+│   └───Summary & Precurse exam
+|
+```
+
+
+
 ---------
 
 *Remember, you have many cheatsheets. Learn to use it.*
