@@ -5,7 +5,7 @@
 **Work-in:**
 
 1. Kaggle competition
-
+https://www.kaggle.com/c/diamonds-data-ft-nov-2020
 *Tutorials*
 ---------
 

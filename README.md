@@ -10,6 +10,7 @@
 
 "git clone https://github.com/Gabvaztor/data_science_nov_2020.git"
 
+- https://developers.google.com/machine-learning/glossary
 
 ```
 contenido
@@ -115,15 +116,57 @@ contenido
 |       └───Non Linear regression (polynominal)
 |       └───SVM (SVR, SVC)
 |       └───interviews
-│   └───day3_ml_linear_regresion
-|       └───ML concepts v1
-|       └───linear_regression
-│   └───day4_logistic_regresion_confusion_matrix
-|       └───logictic regression
-|       └───confusion matrix
-│   └───day5_knn_label_encoder
-|       └───knn
-|       └───label encoder
+│   └───day3_trees_dummies_encoder
+|       └───Decision trees
+|       └───Random forest, XGBoost
+|       └───get dummies
+|       └───label encoder v2 (only objects in df)
+|       └───cross validation
+│   └───day4_grid_save_model
+|       └───save/load model
+|       └───grid_search / pipeline
+│   └───day5_ml_concepts_normalization
+|       └───precision, recall, f1-score, accuracy
+|       └───roc-curve, bias de selección
+|       └───normalization & standarization/scalator
+|
+└───week10_ML_competition_pca_kmeans
+│   └───day1_competition_diamods
+│       - https://www.kaggle.com/c/diamonds-data-ft-nov-2020
+|       └───competition info
+│   └───day2_competition_solved
+|       └───competition alos solved (explained multiples ways)
+│   └───day3_unsupervised_PCA_kmeans
+|       └───Supervised summary
+|       └───Unsupervised/Semi-Supervised Introduction
+|       └───K-means
+|       └───PCA
+|       └───competition alos solved with H2O (auto-ml)
+│   └───day4_grid_save_model
+|       └───git branches exercise in group(epic & tag branches) 
+│   └───day5_unsupervised_kmeans_II
+|       └───k-means code example with images
+|       └───titanic solutions
+|
+└───week11_R_SQL
+│   └───day1_sql_exercise_R_tools
+│       └───SQL with Python/Pandas exercise
+|       └───R preparation
+│   └───day2_dbscan_R_I
+|       └───DBscan
+|       └───T-SNE
+|       └───R Part I
+│   └───day3_unsupervised_PCA_kmeans
+|       └───Supervised summary
+|       └───Unsupervised/Semi-Supervised Introduction
+|       └───K-means
+|       └───PCA
+|       └───competition alos solved with H2O (auto-ml)
+│   └───day4_grid_save_model
+|       └───git branches exercise in group(epic & tag branches) 
+│   └───day5_unsupervised_kmeans_II
+|       └───k-means code example with images
+|       └───titanic solutions
 |
 ```
 
