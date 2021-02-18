@@ -54,7 +54,7 @@ ifelse(v %% 2 == 1, "odd", ifelse(v == 2, "es igual a dos y par", "even"))
 ## IF/ELSE
 
 ifi <- 42
-# todo detras del if y antes de la llave con parentesis 
+# todo detras del if y antes de la llave va con parentesis 
 # antes de los else vaya una llave
 if (ifi < 0) {
   print("Negative number")
@@ -104,6 +104,7 @@ for (i in 1:length(cities)) {
 values <- c("O", NA, "X", NA, "O", "O", "X", NA, "X")
 ttt <- matrix(values, nrow = 3, byrow = TRUE)
 ttt
+
 
 # define the double for loop the tic-tac-toe matrix
 for (i in 1:nrow(ttt)) {
@@ -202,11 +203,12 @@ mi_funcion()
 
 # una funcion que dados dos numeros, devuelva la suma
 
-adding1 <- function(cualquier_numero){
+# se pueden poner parametros con valor por defecto
+adding1 <- function(cualquier_numero = 2){
   cualquier_numero+2
 }
 
-adding1(5)
+adding1()
 
 adding2 <- function(x, y){
   x+y 
@@ -243,11 +245,10 @@ values <- c(1,4,5,NaN)
 
 sd(values_w)
 sd(values)
-class(sd(values))
+typeof(sd(values))
 
 # elimina los nan
 sd(values, na.rm=TRUE)
-
 
 # coge una matriz y calcula la media de cada columna
 
@@ -262,7 +263,10 @@ columnmean <- function(y, removeNA = TRUE) {
 }
 
 columnmean(airquality)
+?order
 
+paso1 <- airquality[order(airquality$Ozone, decreasing = TRUE),]
+paso2 <- airquality[order(paso1$Wind, decreasing = FALSE),]
 # dado un numero devuelve su cuadrado
 
 pow_two <- function(x, print_info = TRUE) {
@@ -272,6 +276,8 @@ pow_two <- function(x, print_info = TRUE) {
   }
   return(y)
 }
+
+pow_two(2)
 # el return en R lleva parentesis
 
 # tira el dado
@@ -345,7 +351,7 @@ function(x) { 3 * x }
 
 # utiliza la funcion anonima con un lapply
 lista_jl <- lapply(c(1,2,3), function(x) { 3 * x })
-lista_jl
+unlist(lista_jl)
 
 
 # aplicar la funcion class a todos los elementos de una lista 
@@ -376,6 +382,16 @@ unlist(lapply(split_math, nchar))
 
 # nchar(c("GAUSS", "1777"))
 
+lista_1 <- list("miguel")
+
+sapply(lista_1, nchar)
+
 # alternativa (vector/matriz)
 sapply(split_math, nchar)
 
+
+
+vol <- c("hola", TRUE, 8)
+
+lista2 <- list(2, "a", "b", TRUE)
+lista2[[1]][2]

@@ -21,7 +21,8 @@ e <- 5L
 f <- as.complex(-1)
 
 ## que tipo de variable es?
-  
+# rm(f) con esto se borra variable de entorno
+
 typeof(e)
 
 is.numeric(d) #son númericos tanto los doubles como los integers
@@ -79,6 +80,12 @@ nombre_peliculas
 # seleccionar la primera y la última pelicula
 nombre_peliculas[c(1,4)]
 
+# seleccionar todos menos el ultimo
+nombre_peliculas[-4]
+
+# seleccionar un rango de indices de un vector
+nombre_peliculas[seq(1,3)]
+
 ## seleccion basada en condicion logica (mascara)
 ## los operadores comparadores son iguales que en Python
 
@@ -127,7 +134,7 @@ otro_nanes[good]
 ## LOS VECTORES NO PUEDEN TENER OBJECTOS DE DIFERENTE TIPO
 
 otro_vector <- c(1,2,5,"hola")
-vector_log <- c(TRUE, 2) ### TRUE en R es tambien interpretado como 1 
+vector_log <- c(TRUE, 2, 6) ### TRUE en R es tambien interpretado como 1 
 ahora_vector <- vector("numeric", length = a) # valor por defecto 0
 
 ## pasar de un tipo a otro
@@ -142,7 +149,7 @@ tallas <- c('m', 'g', 'P', 'P','m', 'M')
 
 # intentar graficar
 # error, son caracteres 
-#plot(tallas)
+plot(tallas)
 
 ## CREAR FACTORES
 
@@ -156,14 +163,18 @@ plot(tallas_factor)
 # mirar niveles de factor
 levels(tallas_factor)
 
+str(tallas_factor)
+
 ## RECODIFICAR FACTORES
 
 # creando factor recodificado
-tallas_recodificado <- factor(tallas,
+tallas_factor <- factor(tallas,
                               levels = c("g", "m", "M", "P"),
                               labels = c("G", "M", "M", "P"))
 
+summary(tallas_factor)
 
+levels(tallas_factor)
 
 # graficando ventas_recodificado
 plot(tallas_recodificado)
@@ -203,7 +214,7 @@ table(factor_survey_vector)
 # convierte las labels a valores numericos
 unclass(factor_survey_vector)
 
-
+str(factor_survey_vector)
 #############
 # MATRICES  #
 #############
@@ -221,12 +232,15 @@ peliculas <- matrix(c(warner,disney,fox), nrow = length(warner), ncol = 3)
 # imprimir matriz en consola
 peliculas
 
+
 # agregar nombres de columnas
 colnames(peliculas)<- c("warner", "fox", "disney")
 
 # agregar nombres de filas
 rownames(peliculas)<-c('2010','2011','2012', '2013','2014', '2015', '2016', '2017','2018')
 
+
+dimnames(peliculas)
 # imprimir matriz por segunda vez
 peliculas
 
@@ -259,7 +273,7 @@ peliculas * matriz_18
 ## SUBCONJUNTOS DE UNA MATRIZ
 
 # seleccionar un elemento de la matriz
-peliculas[3,2]
+peliculas[1,2]
 peliculas["2012", "fox"]
 
 
@@ -285,7 +299,8 @@ peliculas[,2]
 ## EXTRA
 
 # crear matriz 
-ventas <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8, 565.89, 78.98, 344.3, 590.99, 100.00, 345.67, 321.4, 890.99, 33.33, 789.12, 678.345)
+ventas <- c(460.998, 314.4, 290.475, 247.900, 309.306, 165.8, 565.89, 78.98, 344.3, 590.99, 100.00, 345.67, 321.4, 890.99, 33.33, 789.12, 678.345, 388.8)
+length(ventas)
 ventas_worlwide <- matrix(ventas, nrow = 9, byrow = TRUE,
                            dimnames = list(c("Naranjas", "Peras", "Platanos", "Uvas", "Mangos", "Papaya", "Kiwis", "Ciruelas", "Tomates"), 
                                            c("US", "non-US")))
@@ -341,7 +356,7 @@ peliculas_df[c(3,4), c(2,3)]
 peliculas_df[c(3,2), c('PUNTUACION','AFTER 2007')]
 
 # seleccionar una fila del dataframe
-peliculas_df[1,]
+peliculas_df[3,]
 
 # seleccionar una columna del dataframe
 peliculas_df[,2]
@@ -379,6 +394,9 @@ df_ordenado <- peliculas_df[orden_lol,]
 
 ## ELIMINAR DATOS NULOS
 
+# para mostrar todos los datasets que se pueden importar con data 
+# data()
+
 # airquality junto con mtcars, y otras, son datasets que 
 # vienen incluidos en paquetes basicos de R,
 # que se importan con la funcion data("el_nombre")
@@ -412,6 +430,11 @@ names(lista_curso) <- c('vector', 'matriz')
 # mostrar lista 
 lista_curso
 
+# mostrar los elementos de una lista
+lista_curso[[1]]
+lista_curso$vector
+lista_curso[['vector']]
+
 # para mostrar la estructura interna del objeto
 str(lista_curso)
 
@@ -430,7 +453,6 @@ lista_curso[['vector']][3]
 lista_curso[['matriz']][5,3]
 
 ## AGREGAR/ELIMINAR ELEMENTOS DE UNA LISTA
-
 # agregar dataframe a lista
 lista_curso[['data_frame']] <- peliculas_df 
 
@@ -447,7 +469,7 @@ lista_curso
 ## OTRAS FUNCIONES DE INTERES PARA LISTAS
 
 li <- list(clara = TRUE,
-           dio = "hello",
+          greeting = "hello",
            int_vec = sort(rep(seq(8,2,by=-2),times=2))
            )
 
